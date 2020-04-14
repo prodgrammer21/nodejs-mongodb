@@ -1,19 +1,11 @@
 const Accounts = require('../models/Accounts')
 
-module.exports = async (_id, obj) => {
+module.exports = async (_id, set) => {
   try {
-    /* Remove Empty Property */
-    for (const key of Object.keys(obj)) {
-      if (obj[key] == null || obj[key] == undefined) {
-        delete obj[key]
-      }
-    }
-
-    await Accounts.updateOne({ _id }, { $set: obj })
+    await Accounts.update({ _id }, { $set: set })
 
     return true
   } catch (err) {
     return false
   }
-
 }

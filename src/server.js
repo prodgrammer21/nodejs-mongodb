@@ -14,17 +14,17 @@ const accountsRoutes = require('./routes/Accounts')
 
 app.use('/accounts', accountsRoutes)
 
-/* MongoDB Connection */
+/* Connection to MongoDB */
 const dbConfig = 'mongodb://127.0.0.1:27017'
 const dbName = 'nodejs-mongodb'
 
-mongoose.connect(`${dbConfig}/${dbName}`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+mongoose.connect(`${dbConfig}/${dbName}`, { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
 })
 
 const port = 3001
 
-app.listen(port, async () => {
+app.listen(port, () => {
   console.log("Listening on port: ", port)
 })

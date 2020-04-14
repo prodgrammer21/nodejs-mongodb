@@ -16,7 +16,7 @@ router.post('/create', async (req, res) => {
       .status(200)
       .send({
         status: results,
-        message: 'Succesfully Created!'
+        message: 'Successfully Created!'
       })
   } else {
     res
@@ -29,9 +29,7 @@ router.post('/create', async (req, res) => {
 })
 
 router.post('/retrieve', async (req, res) => {
-  const { _id } = req.query
-
-  const results = await RetrieveService(_id)
+  const results = await RetrieveService()
 
   if (results) {
     res
@@ -48,17 +46,16 @@ router.post('/retrieve', async (req, res) => {
 })
 
 router.post('/update', async (req, res) => {
-  const { _id, username, password } = req.body
-  const obj = { username, password }
-  
-  const results = await UpdateService(_id, obj)
+  const { _id, set } = req.body
+
+  const results = await UpdateService(_id, set)
 
   if (results) {
     res
       .status(200)
       .send({
         status: results,
-        message: 'Succesfully Updated!'
+        message: 'Successfully Updated!'
       })
   } else {
     res
@@ -71,7 +68,7 @@ router.post('/update', async (req, res) => {
 })
 
 router.post('/delete', async (req, res) => {
-  const { _id } = req.query
+  const { _id } = req.body
 
   const results = await DeleteService(_id)
 
@@ -80,7 +77,7 @@ router.post('/delete', async (req, res) => {
       .status(200)
       .send({
         status: results,
-        message: 'Succesfully Deleted!'
+        message: 'Successfully Deleted!'
       })
   } else {
     res

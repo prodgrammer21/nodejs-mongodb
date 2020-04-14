@@ -2,7 +2,7 @@ const Accounts = require('../models/Accounts')
 
 module.exports = async (username, password) => {
   try {
-    await Accounts.create({
+    await Accounts.insertMany({
       username,
       password
     })
@@ -11,6 +11,4 @@ module.exports = async (username, password) => {
   } catch (err) {
     return false
   }
-
-
 }
