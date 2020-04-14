@@ -1,5 +1,7 @@
 # Node.js with MongoDB Tutorial by bossROD
 
+Learn more about [MongoDB](https://docs.mongodb.com/manual/reference/method/js-collection/)
+
 ## Getting Started:
 
 Use `git clone` to clone this repo:
@@ -23,6 +25,9 @@ Make sure you setup your `DATABASE` already before starting and using `REST API`
 ```console
 $ npm start
 ```
+
+Go to [MongoDB Manual by bossROD](https://github.com/prodgrammer21/nodejs-mongodb/blob/master/MongoDB%20Manual%20by%20bossROD.md)
+
 
 ## Follow me:
 `Personal Account`: 
